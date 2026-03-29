@@ -1,0 +1,46 @@
+# Maven build output
+target/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ
+*.iws
+*.ipr
+
+# NetBeans
+nbproject/private/
+
+# Java compiled files
+*.class
+
+# Temporary files
+*.tmp
+*.swp
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Jenkins workspace (if local testing)
+workspace/
+
+# WAR files (optional - usually ignored)
+*.war
