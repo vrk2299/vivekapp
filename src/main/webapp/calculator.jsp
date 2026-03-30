@@ -31,7 +31,7 @@ button{
     border-radius:10px;
 }
 </style>
-
+'''
 <script>
 function add(val){
     document.getElementById("expr").value += val;
@@ -84,7 +84,7 @@ if(expr!=null){
     }
 }
 %>
-
+'''
 <br><a href="index.jsp" style="color:white;">Back</a>
 
 </div>
