@@ -8,7 +8,7 @@ public class CalculatorServiceTest {
     @Test
     public void testBasic() {
         CalculatorService c = new CalculatorService();
-        assertEquals(89, c.evaluate("2+3"), 0.01);
+        assertEquals(5, c.evaluate("2+3"), 0.01);
     }
 
     @Test
