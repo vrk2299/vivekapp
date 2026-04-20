@@ -1,11 +1,25 @@
 #!/bin/bash
 
-echo "Deploying vivekapp..."
+echo "Deploying vivekapp on RHEL..."
 
-rm -rf /opt/tomcat/webapps/ROOT*
-cp /tmp/vivekapp.war /opt/tomcat/webapps/ROOT.war
+# Stop Tomcat (RHEL service-based)
+echo "Stopping Tomcat..."
+systemctl stop tomcat
 
-echo "Restarting Tomcat..."
-/opt/tomcat/bin/shutdown.sh
-sleep 3
-/opt/tomcat/bin/startup.sh
+# Clean old app
+echo "Cleaning old deployment..."
+rm -rf /var/lib/tomcat/webapps/ROOT*
+rm -rf /var/lib/tomcat/webapps/vivekapp*
+
+# Copy new WAR
+echo "Copying new WAR..."
+cp /tmp/vivekapp.war /var/lib/tomcat/webapps/ROOT.war
+
+# Set ownership (important for RHEL)
+chown tomcat:tomcat /var/lib/tomcat/webapps/ROOT.war
+
+# Start Tomcat
+echo "Starting Tomcat..."
+systemctl start tomcat
+
+echo "Deployment complete!"
