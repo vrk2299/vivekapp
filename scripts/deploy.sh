@@ -13,7 +13,7 @@ sudo systemctl stop tomcat
 
 # Copy new WAR
 #echo "Copying new WAR..."
-sudo cp /tmp/vivekapp.war /var/lib/tomcat/webapps/
+sudo cp /tmp/target/vivekapp.war /var/lib/tomcat/webapps/
 
 # Set ownership (important for RHEL)
 sudo chown tomcat:tomcat /var/lib/tomcat/webapps/*
