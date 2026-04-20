@@ -7,16 +7,16 @@ echo "Stopping Tomcat..."
 sudo systemctl stop tomcat
 
 # Clean old app
-echo "Cleaning old deployment..."
-sudo rm -rf /var/lib/tomcat/webapps/ROOT*
-sudo rm -rf /var/lib/tomcat/webapps/vivekapp*
+#echo "Cleaning old deployment..."
+#sudo rm -rf /var/lib/tomcat/webapps/ROOT*
+#sudo rm -rf /var/lib/tomcat/webapps/vivekapp*
 
 # Copy new WAR
-echo "Copying new WAR..."
-sudo cp /tmp/vivekapp.war /var/lib/tomcat/webapps/ROOT.war
+#echo "Copying new WAR..."
+sudo cp /tmp/vivekapp.war /var/lib/tomcat/webapps/
 
 # Set ownership (important for RHEL)
-sudo chown tomcat:tomcat /var/lib/tomcat/webapps/ROOT.war
+sudo chown tomcat:tomcat /var/lib/tomcat/webapps/*
 
 # Start Tomcat
 echo "Starting Tomcat..."
