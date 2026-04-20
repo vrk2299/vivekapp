@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+
+files:
+  - source: target/vivekapp.war
+    destination: /tmp
+
+hooks:
+  AfterInstall:
+    - location: scripts/deploy.sh
+      timeout: 300
+      runas: root
